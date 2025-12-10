@@ -125,7 +125,8 @@ namespace OcspResponder.Core
         private async Task<OcspReqResult> GetOcspRequest(OcspHttpRequest httpRequest)
         {
             // Validates the header of the request
-            if (httpRequest.MediaType != "application/ocsp-request")
+            if (httpRequest.HttpMethod == "POST"
+                && httpRequest.MediaType != "application/ocsp-request")
             {
                 return new OcspReqResult
                 {
@@ -232,7 +233,7 @@ namespace OcspResponder.Core
         /// <returns><see cref="OcspReq"/></returns>
         private OcspReq CreateOcspReqFromGet(OcspHttpRequest httpRequest)
         {
-            string encodedOcspRequest = HttpUtility.UrlDecode(httpRequest.RequestUri.Segments.Last());
+            string encodedOcspRequest = httpRequest.LocalPath.TrimStart('/');
             byte[] bytes = Convert.FromBase64String(encodedOcspRequest);
             return new OcspReq(bytes);
         }

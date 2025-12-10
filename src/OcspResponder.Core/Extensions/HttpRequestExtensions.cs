@@ -19,7 +19,7 @@ namespace OcspResponder.Core.Extensions
             {
                 HttpMethod = requestMessage.Method.Method,
                 MediaType = requestMessage.Content.Headers.ContentType.MediaType,
-                RequestUri = requestMessage.RequestUri,
+                LocalPath = requestMessage.RequestUri.LocalPath,
                 Content = await requestMessage.Content.ReadAsByteArrayAsync()
             };
 

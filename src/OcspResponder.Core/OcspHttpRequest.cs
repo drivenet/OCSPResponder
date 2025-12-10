@@ -6,7 +6,7 @@ namespace OcspResponder.Core
     {
         public string HttpMethod { get; set; }
 
-        public Uri RequestUri { get; set; }
+        public string LocalPath { get; set; }
 
         public string MediaType { get; set; }
 

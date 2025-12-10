@@ -24,7 +24,7 @@ namespace OcspResponder.AspNetCore
             var ocspHttpRequest = new OcspHttpRequest();
             ocspHttpRequest.HttpMethod = request.Method;
             ocspHttpRequest.MediaType = request.ContentType;
-            ocspHttpRequest.RequestUri = request.GetUri();
+            ocspHttpRequest.LocalPath = request.GetUri().LocalPath;
             ocspHttpRequest.Content = await request.GetRawBodyBytesAsync();
 
             return ocspHttpRequest;
