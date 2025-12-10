@@ -9,7 +9,7 @@
     <Company>Gabriel Calegari</Company>
     <Description>A .NET facility to create an OCSP Responder for AspNetCore</Description>
     <Copyright>2018 © Gabriel Calegari</Copyright>
-    <PackageLicenseUrl>https://github.com/gabrielcalegari/OCSPResponder/blob/master/LICENSE</PackageLicenseUrl>
+	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/gabrielcalegari/OCSPResponder</PackageProjectUrl>
     <RepositoryUrl>https://github.com/gabrielcalegari/OCSPResponder</RepositoryUrl>
     <PackageTags>csharp, ocsp-responder, ocsp, netcore</PackageTags>
